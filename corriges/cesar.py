@@ -45,6 +45,19 @@ def tuto():
     print(resultat.stderr)
     print(resultat.returncode)
 
+def cesar(texte, decalage):
+    resultat = ""
+
+    for caractere in texte:
+        if "a" <= caractere <= "z":
+            position = ord(caractere) - ord("a")
+            nouvelle_position = (position + decalage) % 26
+            resultat += chr(ord("a") + nouvelle_position)
+        else:
+            resultat += caractere
+
+    return resultat 
+
 
 if __name__ == "__main__":
     # tuto()
